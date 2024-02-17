@@ -5,7 +5,7 @@
 
   tasks:
 
-    - name: Install favorite packages
+    - name: Remove some favorite packages for testing
       ansible.builtin.apt:
         state: absent
         pkg: 
