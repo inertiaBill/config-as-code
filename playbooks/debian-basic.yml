@@ -5,6 +5,15 @@
 
   tasks:
 
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Update all packages to the latest version
+      ansible.builtin.apt:
+        upgrade: yes
+
     - name: Install favorite packages
       ansible.builtin.apt:
         state: latest
@@ -21,5 +30,32 @@
         - sqlite3-doc
         - ufw
 #        - xclip
-#        - code
 #        - xscreensaver
+
+    - name: Install vscode on Raspberry Pi devices
+      ansible.builtin.apt:
+        state: latest
+        pkg: 
+        - code
+      when: inventory_hostname in groups['rpi']
+ 
+    - name: Enable ufw
+      community.general.ufw:
+        state: enabled
+
+    # Using some port other than the default may add a bit more security
+    # but don't count on obscurity for much
+    - name: Allow SSH through ufw
+      community.general.ufw:
+        rule: allow
+        port: ssh
+
+    - name: Display all variables/facts known for a host
+      ansible.builtin.debug:
+        var: hostvars[inventory_hostname]
+        verbosity: 2
+
+    - name: Output distribution
+      ansible.builtin.debug:
+        msg: Distribution {{ ansible_distribution }}
+
