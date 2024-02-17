@@ -39,17 +39,6 @@
         - code
       when: inventory_hostname in groups['rpi']
  
-    - name: Enable ufw
-      community.general.ufw:
-        state: enabled
-
-    # Using some port other than the default may add a bit more security
-    # but don't count on obscurity for much
-    - name: Allow SSH through ufw
-      community.general.ufw:
-        rule: allow
-        port: ssh
-
     - name: Display all variables/facts known for a host
       ansible.builtin.debug:
         var: hostvars[inventory_hostname]
