@@ -1,0 +1,25 @@
+---
+- name: Basics for Debian derivatives
+  hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Install favorite packages
+      ansible.builtin.apt:
+        state: latest
+        pkg: 
+        - vim
+        - vim-gtk3
+        - curl
+        - tmux
+        - git
+        - python3
+        - python3-pip
+        - python3-venv
+        - sqlite3
+        - sqlite3-doc
+        - ufw
+#        - xclip
+#        - code
+#        - xscreensaver
