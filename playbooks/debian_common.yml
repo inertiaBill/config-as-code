@@ -1,5 +1,5 @@
 ---
-- name: Basics for Debian derivatives
+- name: Common configuration for Debian derivatives
   hosts: all
   become: yes
 

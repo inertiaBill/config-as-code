@@ -1,5 +1,5 @@
 ---
-- name: Removes some basics for Debian derivatives for testing
+- name: Removes some common configuration for Debian derivatives for testing
   hosts: all
   become: yes
 

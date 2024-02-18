@@ -1,0 +1,3 @@
+---
+- import_playbook: debian_common.yml
+- import_playbook: ufw.yml
