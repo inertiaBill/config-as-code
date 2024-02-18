@@ -50,9 +50,9 @@ Setup ufw on localhost,
 - `ansible-playbook --inventory localhost, playbooks/ufw.yml -vv`
 
 Run linux-setup.yml use user "user_name" and ask for user_name's password,
-- `ansible-playbook --inventory localhost, --user user_name playbooks/debian-setup.yml --ask-become-pass -v`
+- `ansible-playbook --inventory localhost, --user user_name playbooks/debian_common.yml --ask-become-pass -v`
 
 ## Sample ansible and ansible-playbook commands using inventory
 
 - `ansible --inventory inventory -m ping all --user user_name -v`
-- `ansible-playbook --inventory inventory --user user_name playbooks/linux-setup.yml --ask-become-pass -v`
+- `ansible-playbook --inventory inventory --user user_name playbooks/linux_common.yml --ask-become-pass -v`

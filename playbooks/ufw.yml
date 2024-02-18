@@ -1,5 +1,5 @@
 ---
-- name: Basics for Debian derivatives
+- name: Configure Uncomplicated Firewall ufw
   hosts: all
   become: yes
 
