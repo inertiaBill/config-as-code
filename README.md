@@ -49,8 +49,8 @@ Notes on running playbooks,
 Setup ufw on localhost,
 - `ansible-playbook --inventory localhost, playbooks/ufw.yml -vv`
 
-Run linux-setup.yml use user "user_name" and ask for user_name's password,
-- `ansible-playbook --inventory localhost, --user user_name playbooks/debian_common.yml --ask-become-pass -v`
+Run rpi_common.yml use user "user_name" and ask for user_name's password,
+- `ansible-playbook --inventory localhost, --user user_name playbooks/rpi_common.yml --ask-become-pass -v`
 
 ## Sample ansible and ansible-playbook commands using inventory
 

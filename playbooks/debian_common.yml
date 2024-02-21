@@ -31,13 +31,6 @@
         - ufw
 #        - xclip
 #        - xscreensaver
-
-    - name: Install vscode on Raspberry Pi devices
-      ansible.builtin.apt:
-        state: latest
-        pkg: 
-        - code
-      when: inventory_hostname in groups['rpi']
  
     - name: Display all variables/facts known for a host
       ansible.builtin.debug:
