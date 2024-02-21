@@ -1,0 +1,16 @@
+---
+- import_playbook: linux_common.yml
+
+- name: Raspberry Pi specific tasks
+  hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Install Visual Studio Code on Raspberry Pi devices
+      ansible.builtin.apt:
+        state: latest
+        pkg: 
+        - code
+# Keep when condition in case I want to try to bring it back
+#      when: inventory_hostname in groups['rpi']
