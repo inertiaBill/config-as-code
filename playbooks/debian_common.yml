@@ -28,7 +28,9 @@
         - python3-venv
         - sqlite3
         - sqlite3-doc
-        - ufw
+        - ufw                 # Uncomplicated firewall
+        - gnome-disk-utility  # For working with LUKS
+        - cryptsetup          # For working with LUKS
 #        - xclip
 #        - xscreensaver
  
