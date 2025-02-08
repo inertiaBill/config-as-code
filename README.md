@@ -13,7 +13,6 @@ Note: If you have an old version of Python and the following does not find venv,
 
 - `cd ~`
 - `mkdir pyenv`
-- `cd pyenv`
 - `python3 -m venv pyenv/ansible`
 
 ### Ansible
